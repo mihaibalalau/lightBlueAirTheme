@@ -1,0 +1,37 @@
+.file-uploader
+    width: 100%
+    margin: 2rem 0
+
+    .drop-area
+        height: 20rem
+
+        &, .content
+            display: flex
+            justify-content: center
+            align-items: center
+
+        .content
+            color: $light-7
+            flex-flow: column nowrap
+            font-size: 1.4rem
+
+            svg
+                fill: $light-5
+                height: 8rem
+                margin-bottom: 2rem
+
+    .preview
+        display: flex
+        flex-flow: row nowrap
+        width: 100%
+
+        .thumbnail
+            width: 10rem
+            height: 10rem
+            display: flex
+
+            svg, img
+                max-width: 100%
+                max-height: 100%
+                width: auto
+                height: auto

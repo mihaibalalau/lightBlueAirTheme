@@ -1,0 +1,50 @@
+.button
+    &.request-button
+        position: relative
+        display: inline-flex
+        font-size: 16px
+        background: $blue-1,
+        transition: 1s
+
+        &:hover
+            color: $dark-1
+            fill: $dark-1
+
+            &:not(.complete):not(.disabled):not(.loading):not(.error)
+                .button-overlay
+                    width: 100%
+
+        &.loading
+            background: #ff00c5
+            color: $light-1
+            fill: $light-1
+
+        &.complete
+            background: #7bb751
+            color: $dark-1
+            cursor: default
+
+        &.error
+            background: red
+            color: $light-1
+            fill: $light-1
+
+        &.disabled:not(.complete)
+            cursor: default
+            background-color: $dark-1 !important
+
+        .button-overlay
+            position: absolute
+            width: 0
+            height: 100%
+            top: 0
+            left: 0
+            bottom: 0
+            background: #c38f1f
+            transition: 1s
+
+        .button-content
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            z-index: 10

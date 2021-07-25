@@ -1,0 +1,80 @@
+.tabs 
+    z-index: 0
+    transition: .3s linear
+
+    & > .tabs-header
+        display: flex
+        justify-content: space-between
+        z-index: 1
+
+        & .left
+            display: flex
+
+        & .tab
+            display: flex
+            cursor: pointer
+            padding: 10px
+            min-width: 60px
+            justify-content: center
+            align-items: center
+            border-radius: 4px 4px 0 0
+            color: white
+            fill: white
+            background-color: #656c6e
+            transition: .3s linear
+            font-size: 15px
+            margin: 0 1px
+
+            &:first-child
+                margin-left: 0
+
+            &:last-child
+                margin-right: 0
+
+            &.selected
+                position: relative
+                color: #2f3238
+                fill: #2f3238
+                background-color: #d3e3e6
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3)
+                z-index: 2
+
+            &:not(.selected):hover
+                background-color: #737b7d
+
+            & .icon
+                display: flex
+
+        & .right
+            display: flex
+
+            & .tab
+                background-color: #41719e
+                color: #d6d6d6
+                fill: #d6d6d6
+
+                &.selected
+                    box-shadow: -2px 0 10px 0 rgba(0, 0, 0, .3)
+
+                &.selected,
+                &:not(.selected):hover
+                    background-color: #d3e3ff
+                    color: #2f3238
+
+
+
+    /*              CONTENT               */
+    & > .tab-content
+        display: none
+        position: relative
+        overflow: hidden
+        background-color: #d3e3e6
+        padding: 20px 5px
+        z-index: 3
+
+        &.selected
+            display: block
+
+
+        &.right
+            background-color: #d3e3ff

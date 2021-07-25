@@ -1,0 +1,62 @@
+.labeled
+    position: relative
+    background: $light-2
+    border-radius: .3rem
+
+    &.required
+        &:before
+            content: "*"
+            display: flex
+            justify-content: center
+            height: 2rem
+            width: 2rem
+            background: $light-2
+            position: absolute
+            top: 0
+            left: 0
+            transform: translate(-30%, -30%)
+            border-radius: 50%
+            font-size: 1.6rem
+            z-index: 2
+
+    & label:first-of-type
+        position: absolute
+        display: flex
+        align-items: center
+        top: 1.8rem
+        left: 2rem
+        font-size: 1.8rem
+        transition: $transition-1
+        border-radius: .5rem
+        color: $dark-3
+
+    &:focus-within label,
+    & label.upper
+        transform: translateY(-50%)
+        font-size: 1.6rem
+        top: -.5rem
+        padding: .1rem 1rem
+        background: $light-2
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .2)
+
+        &::before
+            content: ""
+            display: block
+
+.errors
+    transition: $transition-1
+    font-size: 1.3rem
+    background: rgba(255, 0, 0, .2)
+    overflow: hidden
+    animation: .3s growDown ease-in-out
+
+    & .message
+        display: flex
+        align-items: center
+        padding: 0 .2rem
+        color: $red-1
+        fill: $red-1
+
+        & svg
+            flex-shrink: 0
+            flex-grow: 0

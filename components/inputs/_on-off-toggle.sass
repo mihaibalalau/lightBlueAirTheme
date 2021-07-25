@@ -1,0 +1,71 @@
+.on-off-toggle
+    display: inline-flex
+    align-items: center
+    user-select: none
+    outline: none
+
+    &.off .label-off
+        color: $blue-1
+    &.on .label-on
+        color: $orange-1
+
+    &.off .label-on,
+    &.on .label-off
+        &:hover
+            text-shadow: .1rem .1rem .1rem rgba(0,0,0,.1)
+            font-size: 1.4rem
+
+
+    &.off .label-off,
+    &.on .label-on
+        font-size: 1.8rem
+        font-weight: 700
+        text-shadow: .1rem .1rem .1rem rgba(0,0,0,.2)
+        cursor: default
+
+    & .label-off,
+    & .label-on
+        cursor: pointer
+        color: $dark-3
+        font-size: 1.2rem
+        transition: $transition-2
+        text-align: center
+        width: 10rem
+        font-weight: 500
+
+
+    & .toggle
+        cursor: pointer
+        position: relative
+        display: inline-block
+        width: 10rem
+        height: 4rem
+        background: $dark-1
+        transition: $transition-2
+        border-radius: .2rem
+        box-shadow: 0 .4rem .2rem -.4rem rgba(47, 50, 56, 0.9)
+
+        &:after
+            content: unset
+
+        & > input[type=checkbox]
+            width: 0
+            height: 0
+            visibility: hidden
+
+        & > input[type=checkbox] ~ span
+            position: absolute
+            top: 0
+            left: 0
+            width: 50%
+            height: 100%
+            background-color: $blue-1,
+            transition: .5s
+            border-radius: .2rem
+
+        & > input[type=checkbox]:checked ~ span
+            left: 50%
+            background-color: $orange-1
+
+    &:focus .toggle > input[type=checkbox] ~ span
+        transform: unset

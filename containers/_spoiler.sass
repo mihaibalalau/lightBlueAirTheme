@@ -1,0 +1,44 @@
+.spoiler 
+    transition: .3s
+    display: inline-flex
+    flex-flow: row nowrap
+    height: 40px
+    margin: 5px
+    max-width: 100%
+
+    &.closed
+        max-width: 40px
+
+    & .spoiler-button
+        height: 40px
+        width: 40px
+        padding: 5px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        cursor: pointer
+        background-color: #41719e
+        fill: #d6d6d6
+        color: #d6d6d6
+        transition: .3s
+
+        &:hover
+            background-color: #497fb1
+            box-shadow: 0 0 0 5px rgba(67, 67, 67, 0.1)
+
+
+    & .spoiler-content
+        flex-shrink: 1
+        display: flex
+        justify-content: center
+        align-items: center
+        max-width: 100%
+        transition: .3s
+
+
+    &.closed
+        .spoiler-content
+            visibility: hidden
+            opacity: 0
+            max-width: 0
